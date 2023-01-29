@@ -14,11 +14,4 @@ public class IadApplication {
     public static void main(String[] args) {
         SpringApplication.run(IadApplication.class, args);
     }
-
-    @Bean
-    public AdminClient adminClient() {
-        Properties config = new Properties();
-        config.put("bootstrap.servers", "localhost:9092");
-        return AdminClient.create(config);
-    }
 }

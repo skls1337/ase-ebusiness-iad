@@ -17,10 +17,10 @@ public class Consumer {
         logger.info(String.format("#### Consumed message %s", message));
     }
 
-    @KafkaListener(topics = "danene", groupId = "group_id")
-    public void consume(String message) throws IOException {
-        logger.info(String.format("#### Consumed message %s", message));
+    @KafkaListener(topics = "test", groupId = "group_id")
+    public void consumeTest(String message) throws IOException {
+        String transformedMessage = message.toUpperCase();
+        logger.info(String.format("#### Consumed message %s", transformedMessage));
     }
-
 
 }
